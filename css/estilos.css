@@ -4,63 +4,84 @@
     margin: 0px;
     padding: 0px;
     font-family:'Roboto', Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
 }
 
-body{
-    border: 10px solid #335384;
-    border-radius: 20px;
-}
-
-.contenedor {
+html,body{
     width: 100%;
-
+    height: 100%;
 }
-
-.cabecero {
-    padding: 25px 100px;
+.contenedor-main {
+    width: 100%;
 }
-
-.cabecero h1 {
-    text-align: center;
-    font-size: 60px;
-}
-
 .main {
+    margin: auto;
     display: flex;
-    width: auto;
-    padding: 0px 100px;
+    justify-content: center;
+    width: 85%;
+    padding: 5px;
+    border: 5px solid #335384;
+    border-radius: 20px;
+    overflow: hidden;
 }
-
-.main_left,
-.main_right {
-    margin: 30px;
-    padding: 25px;
+.main_left,.main_right {
+    padding: 20px;
 
 }
-
 .main_left {
-    width: 35%;
+    width: 40%;
     background-color: #335384;
     color: aliceblue;
     border-radius: 15px;
-
 }
-
 .main_right {
-    width: 65%;
+    width: 60%;
 }
-
+/* Sección lateral izquierda */
 .image-profile {
     display: flex;
     justify-content: center;
-    margin: 20px 15px;
+    align-items: center;
+    margin: 20px auto;
 }
-
 .image-profile img {
-    width: 150px;
-    border-radius: 120px;
+    width: 50%;
+    height: 50%;
+    border-radius: 100px;
 }
-
+.datos{
+    margin: 25px auto;
+}
+.datos h3{
+    padding: 5px auto;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    color: #fff;
+}
+.datos h3:hover{
+    color: #000;
+}
+.datos ul{
+    list-style-type: none;
+}
+.datos li{
+    text-align: left;
+    font-size: 1.1em;
+    margin: 5px 0px;
+}
+.datos p{
+    font-size: 1.1em;
+    margin: 5px auto;
+    color: #000;
+    display: inline-block;
+    width: 100%;
+}
+.datos a{
+    color: #000;
+    margin: 5px auto;
+    display: inline-block;
+}
+/* Sección principal */
 .name h2, .name h3{
     text-align: center;
     text-transform: uppercase;
@@ -70,80 +91,507 @@ body{
     width: 100%;
 }
 .name h2{
-    font-size: 50px;
+    font-size: 2.5em;
     color: #335384;
 }
-
-.name h3{
-    font-size: 30px;
-    color: #5BA7D1;
-}
-
 .descripcionPerfil,.experiencia{
-    margin: 40px 0px;
-
+    margin: 5px auto;
 }
-.descripcionPerfil h3, .experiencia h3, .estudios h3{
-    text-align: left;
+.name h3, .descripcionPerfil h3, .experiencia h3, .estudios h3{
     color: #5BA7D1;
     text-transform: uppercase;
-    font-size: 25px;
+    font-size: 1.5em;
     margin: 5px 0px;
     padding: 5px 0px;
 }
-
+.name h3{
+    font-size: 2em;
+}
 .descripcionPerfil p{
     text-align: justify;
-    font-size: 18px;
+    font-size: 1.1em;
+    width: 100%;
 }
-
+#btn-experiencia, #btn-certificado, #btn-contacta, #btn-habilidades{
+    text-decoration: none;
+    display: block;
+}
+#btn-experiencia:hover{
+    text-decoration: underline;
+    color: #fff;
+    background-color: #335384;
+    border-radius: 15px;
+    text-align: center;
+}
+.experiencia h3:hover{
+    color: #fff;
+}
+#btn-certificado:hover, #btn-contacta:hover, #btn-habilidades:hover{
+    background-color: #fff;
+    color: #000;
+    border-radius: 15px;
+    text-decoration: underline;
+    text-align: center;
+}
+/* Iniciamos el primer modal */
+/* Añadimos animación para Chrome, Safari, Opera */
+@-webkit-keyframes modalExperiencia {
+    from {
+        top: -100px;
+        opacity: 0;
+    }
+    to {
+        top: 0px;
+        opacity: 1;
+    }
+}
+/* Añadimos animación */
+@keyframes modalExperiencia {
+    from {
+        top: -100px;
+        opacity: 0;
+    }
+    to {
+        top: 0px;
+        opacity: 1;
+    }
+}
+/* Modal de certificados */
+/* Añadimos animación para Chrome, Safari, Opera */
+@-webkit-keyframes modalCertificado {
+    from {
+        top: -100px;
+        opacity: 0;
+    }
+    to {
+        top: 0px;
+        opacity: 1;
+    }
+}
+/* Añadimos animación */
+@keyframes modalCertificado {
+    from {
+        top: -100px;
+        opacity: 0;
+    }
+    to {
+        top: 0px;
+        opacity: 1;
+    }
+}
+/* Modal contanta conmigo */
+@-webkit-keyframes modalContacta {
+    from {
+        top: -100px;
+        opacity: 0;
+    }
+    to {
+        top: 0px;
+        opacity: 1;
+    }
+}
+/* Añadimos animación */
+@keyframes modalContacta {
+    from {
+        top: -100px;
+        opacity: 0;
+    }
+    to {
+        top: 0px;
+        opacity: 1;
+    }
+}
+/* Modal habilidades */
+@-webkit-keyframes modalHabilidades{
+    from {
+        top: -100px;
+        opacity: 0;
+    }
+    to {
+        top: 0px;
+        opacity: 1;
+    }
+}
+/* Añadimos animación */
+@keyframes modalHabilidades{
+    from {
+        top: -100px;
+        opacity: 0;
+    }
+    to {
+        top: 0px;
+        opacity: 1;
+    }
+}
+/* El background del modal */
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+/* Se modidica el display del modal cuando esta activado el target */
+.modal:target {
+    display: table;
+    position: absolute;
+}
+/* La caja del modal */
+.modal-dialog {
+    display: table-cell;
+    vertical-align: middle;
+}
+/* El contenido del modal */
+.modal-dialog .modal-content, .modal-content-certificado{
+    margin: auto;
+    background-color: aliceblue;
+    position: relative;
+    padding: 0;
+    outline: 0;
+    border: 1px #777 solid;
+    text-align: justify;
+    width: 95%;
+    height: 95%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* Añadimos animación */
+    -webkit-animation-name: 32modalExperiencia;
+    /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 0.5s;
+    /* Chrome, Safari, Opera */
+    animation-name: modalExperiencia;
+    animation-duration: 0.5s;
+    border-radius: 15px;
+    /* Añadimos animación */
+    -webkit-animation-name: 32modalCertificado;
+    /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 0.5s;
+    /* Chrome, Safari, Opera */
+    animation-name: modalCertificado;
+}
+.contenedor-experiencia{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: auto;
+    width: 100%;
+    padding: 0px 10px;
+    height: 85%;
+    align-content: stretch;
+}
 .experiecia_1{
-    margin: 40px 0px;
+    width: 33%;
+    height: 100%;
+    margin: auto auto 20px auto;
+    padding: 5px;
+    overflow: auto;
+    border-radius: 15px;
+    box-shadow:  rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
-
 .experiecia_1 ul{
     position: relative;
-    left: 25px;
+    list-style-type: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
-
+.experiecia_1 ul li{
+    display: flex;
+    padding: 10px;
+    margin: 5px;
+}
 .experiecia_1 h4, .estudios h4{
-    font-size: 20px;
-    margin: 5px 0px;
+    font-size: 1.25em;
+    margin: auto;
 }
-
 .experiecia_1 h5, .estudios h5{
-    font-size: 19px;
+    font-size: 1.2em;
+    width: 100%;
 }
-.experiecia_1 hr, .estudios hr{
-    margin: 0px 0px 8px 0px;
+.estudios h5{
+    padding: 5px;
+    margin: 5px auto;
 }
 .experiecia_1 p{
     text-align: justify;
-    padding: 5px 2px;
+    font-size: 1em;
 }
-
-.datos{
-    margin: 80px 0px;
+.cabecero_experiencia{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
 }
-
-.datos h3{
+/* #borde-experiencia{
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+} */
+/* Estilos del boton del close del modal */
+.container{
+    padding: 10px;
+    width: 100%;
+    height: 10%;
+}
+.closebtn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
     text-align: center;
-    padding: 10px 2px;
-    font-size: 25px;
-    text-transform: uppercase;
+    width: 40px;
+    height: 40px;
+    float: right;
+    font-size: 35px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #E74C3C ;
+    border-radius: 60px;
 }
-
-.datos li{
-    text-align: left;
-    font-size: 15px;
-    margin: 5px 0px;
+.closebtn:hover,
+.closebtn:focus {
+    color: #000;
+    background-color: #EC7063;
+    text-decoration: none;
+    cursor: pointer;
 }
-
-.datos p{
-    font-size: 15px;
-    margin: 5px 0px;
+input[type="radio"]{
+    position: relative;
+    top: 20px;
+    top: 450px;
 }
+.contenedor_slider{
+    width: 60%;
+    height: 80%;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+}
+.contenedor{
+    width: 80%;
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+.cards{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    position: absolute;
+    width: 85%;
+    height: 90%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.165,0.84,0.44,1);
+}
+.contenedor_slider img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+#item-1:checked ~ .cards #selector-1,
+#item-2:checked ~ .cards #selector-2,
+#item-3:checked ~ .cards #selector-3,
+#item-4:checked ~ .cards #selector-4,
+#item-5:checked ~ .cards #selector-5,
+#item-6:checked ~ .cards #selector-6,
+#item-7:checked ~ .cards #selector-7,
+#item-8:checked ~ .cards #selector-8,
+#item-9:checked ~ .cards #selector-9,
+#item-10:checked ~ .cards #selector-10,
+#item-11:checked ~ .cards #selector-11,
+#item-12:checked ~ .cards #selector-12,
+#item-13:checked ~ .cards #selector-13,
+#item-14:checked ~ .cards #selector-14,
+#item-15:checked ~ .cards #selector-15,
+#item-16:checked ~ .cards #selector-16,
+#item-17:checked ~ .cards #selector-17,
+#item-18:checked ~ .cards #selector-18,
+#item-19:checked ~ .cards #selector-19,
+#item-20:checked ~ .cards #selector-20,
+#item-21:checked ~ .cards #selector-21,
+#item-22:checked ~ .cards #selector-22,
+#item-23:checked ~ .cards #selector-23{
+    transform: translateX(0) scale(1.25);
+    z-index: 1;
+}
+/* Selección hacia la izquierda */
+#item-1:checked ~ .cards #selector-23,
+#item-2:checked ~ .cards #selector-4,
+#item-3:checked ~ .cards #selector-5,
+#item-4:checked ~ .cards #selector-6,
+#item-5:checked ~ .cards #selector-7,
+#item-6:checked ~ .cards #selector-8,
+#item-7:checked ~ .cards #selector-9,
+#item-8:checked ~ .cards #selector-10,
+#item-9:checked ~ .cards #selector-11,
+#item-10:checked ~ .cards #selector-12,
+#item-11:checked ~ .cards #selector-13,
+#item-12:checked ~ .cards #selector-14,
+#item-13:checked ~ .cards #selector-15,
+#item-14:checked ~ .cards #selector-16,
+#item-15:checked ~ .cards #selector-17,
+#item-16:checked ~ .cards #selector-18,
+#item-17:checked ~ .cards #selector-19,
+#item-18:checked ~ .cards #selector-20,
+#item-19:checked ~ .cards #selector-21,
+#item-20:checked ~ .cards #selector-22,
+#item-21:checked ~ .cards #selector-23,
+#item-22:checked ~ .cards #selector-1,
+#item-23:checked ~ .cards #selector-2
+{
+    transform: translateX(-40%) scale(0.9);
+    z-index: 0;
+    opacity: 0.5;
+} 
+/* Selección hacia la derecha */
+#item-1:checked ~ .cards #selector-2,
+#item-2:checked ~ .cards #selector-3,
+#item-3:checked ~ .cards #selector-4,
+#item-4:checked ~ .cards #selector-5,
+#item-5:checked ~ .cards #selector-6,
+#item-6:checked ~ .cards #selector-7,
+#item-7:checked ~ .cards #selector-8,
+#item-8:checked ~ .cards #selector-9,
+#item-9:checked ~ .cards #selector-10,
+#item-10:checked ~ .cards #selector-11,
+#item-11:checked ~ .cards #selector-12,
+#item-12:checked ~ .cards #selector-13,
+#item-13:checked ~ .cards #selector-14,
+#item-14:checked ~ .cards #selector-15,
+#item-15:checked ~ .cards #selector-16,
+#item-16:checked ~ .cards #selector-17,
+#item-17:checked ~ .cards #selector-18,
+#item-18:checked ~ .cards #selector-19,
+#item-19:checked ~ .cards #selector-20,
+#item-20:checked ~ .cards #selector-21,
+#item-21:checked ~ .cards #selector-22,
+#item-22:checked ~ .cards #selector-23,
+#item-23:checked ~ .cards #selector-1
+{
+    transform: translateX(40%) scale(0.9);
+    z-index: 0;
+    opacity: 0.5;
+}
+.modal-datos {
+    display: none;
+    position: fixed;
+    left: 7%;
+    top: 50%;
+    width: 36%;
+    height: 48%;
+    overflow: auto;
+}
+/* Se modidica el display del modal cuando esta activado el target */
+.modal-datos:target {
+    display: table;
+    position: absolute;
+}
+/* La caja del modal */
+.modal-dialog-datos {
+    display: table-cell;
+    vertical-align: middle;
+}
+/* El contenido del modal */
+.modal-dialog-datos .modal-content-datos{
+    margin: auto;
+    background-color: white;
+    position: relative;
+    padding: 0;
+    outline: 0;
+    border: 1px #777 solid;
+    text-align: justify;
+    width: 95%;
+    height: 95%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* Añadimos animación */
+    -webkit-animation-name: 32modalHabilidades;
+    /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 0.5s;
+    /* Chrome, Safari, Opera */
+    animation-name: modalHabilidades;
+    animation-duration: 0.5s;
+    border-radius: 15px;
+    /* Añadimos animación */
+    -webkit-animation-name: 32modalContacta;
+    /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 0.5s;
+    /* Chrome, Safari, Opera */
+    animation-name: modalContacta;
+}
+.contenedor-contanta{
+    margin: auto;
+    padding: 15px;
+    width: 100%;
+    height: 80%;
+}
+.contenedor-contanta a {
+    text-decoration: none;
+}
+.contenedor-contanta a:hover {
+    text-decoration: underline;
+    background-color: #335384;
+    padding: 5px;
+    color: #fff;
+    border-radius: 10px;
+}
+.contenedor-skills{
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    display: flex;
+}
+.contenedor-skills form{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-around;
+}
+.contenedor-skill-g, .contenedor-skill-tecnico{
+    width: 45%;
+    margin: 5px 8px;
+    border: 1px solid #000;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow:  rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.contenedor-skills label, .contenedor-skills h5, .contenedor-skills input{
+    color: #000;
+    width: 80%;
+    margin: auto;
+    display: block;
+}
+.contenedor-skills h5{
+    font-size: 1.2em;
+    margin: auto;
+    padding: 5px;
+}
+.contenedor-skills label{
+    font-size: 1em;
 
-.datos a{
-    color: aliceblue;
+}
+input[type="range"]{
+    background-color: #335384;
 }
